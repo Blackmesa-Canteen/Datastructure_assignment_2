@@ -84,6 +84,12 @@
 		<Unit filename="/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.h">
 			<Option target="Assiginment2_Code"/>
 		</Unit>
+		<Unit filename="/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.c">
+			<Option target="Assiginment2_Code"/>
+		</Unit>
+		<Unit filename="/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.h">
+			<Option target="Assiginment2_Code"/>
+		</Unit>
 		<Unit filename="/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.c">
 			<Option target="Assiginment2_Code"/>
 		</Unit>
@@ -91,6 +97,12 @@
 			<Option target="Assiginment2_Code"/>
 		</Unit>
 		<Unit filename="/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/main.c">
+			<Option target="Assiginment2_Code"/>
+		</Unit>
+		<Unit filename="/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c">
+			<Option target="Assiginment2_Code"/>
+		</Unit>
+		<Unit filename="/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.h">
 			<Option target="Assiginment2_Code"/>
 		</Unit>
 		<Unit filename="/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/CMakeLists.txt">

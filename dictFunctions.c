@@ -30,6 +30,23 @@ char* cutString(char* input,int start,int end) {
     return output;
 }
 
+/** used to copy string */
+char* copyString(char* input) {
+
+    int i, j = 0;
+    int size = strlen(input);
+    char* output = NULL;
+
+    output = (char*) calloc((size + 1), sizeof(char));
+    if (output == NULL) exit(1);
+    for(i = 0; i < size; i++) {
+        output[j++] = input[i];
+    }
+    output[j] = '\0';
+
+    return output;
+}
+
 /*
  *  int extractIntNumber(char* buffer, int* start, int* end) ->
  *  input a line of record, index interval, and output the number

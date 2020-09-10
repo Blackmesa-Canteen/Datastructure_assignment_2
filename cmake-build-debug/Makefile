@@ -170,6 +170,33 @@ dictFunctions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.s
 .PHONY : dictFunctions.c.s
 
+kdTree.o: kdTree.c.o
+
+.PHONY : kdTree.o
+
+# target to build an object file
+kdTree.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/kdTree.c.o
+.PHONY : kdTree.c.o
+
+kdTree.i: kdTree.c.i
+
+.PHONY : kdTree.i
+
+# target to preprocess a source file
+kdTree.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/kdTree.c.i
+.PHONY : kdTree.c.i
+
+kdTree.s: kdTree.c.s
+
+.PHONY : kdTree.s
+
+# target to generate assembly for a file
+kdTree.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/kdTree.c.s
+.PHONY : kdTree.c.s
+
 list.o: list.c.o
 
 .PHONY : list.o
@@ -224,6 +251,33 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/main.c.s
 .PHONY : main.c.s
 
+pointFunctions.o: pointFunctions.c.o
+
+.PHONY : pointFunctions.o
+
+# target to build an object file
+pointFunctions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o
+.PHONY : pointFunctions.c.o
+
+pointFunctions.i: pointFunctions.c.i
+
+.PHONY : pointFunctions.i
+
+# target to preprocess a source file
+pointFunctions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.i
+.PHONY : pointFunctions.c.i
+
+pointFunctions.s: pointFunctions.c.s
+
+.PHONY : pointFunctions.s
+
+# target to generate assembly for a file
+pointFunctions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.s
+.PHONY : pointFunctions.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -236,12 +290,18 @@ help:
 	@echo "... dictFunctions.o"
 	@echo "... dictFunctions.i"
 	@echo "... dictFunctions.s"
+	@echo "... kdTree.o"
+	@echo "... kdTree.i"
+	@echo "... kdTree.s"
 	@echo "... list.o"
 	@echo "... list.i"
 	@echo "... list.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... pointFunctions.o"
+	@echo "... pointFunctions.i"
+	@echo "... pointFunctions.s"
 .PHONY : help
 
 

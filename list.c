@@ -9,6 +9,7 @@
 
 #include "list.h"
 #include "dictFunctions.h"
+#include "pointFunctions.h"
 #define MAXLENGTH 512
 
 /*  node_ptr creatNodes(FILE *fp) -> input the pointer that points to source .csv file, this
@@ -208,4 +209,56 @@ void freeList(node_ptr head) {
 
         free(p);
     }
+}
+
+int outputPointFile(node_ptr dictHead) {
+
+    node_ptr p = dictHead -> next;
+    FILE *fp = fopen("points.txt", "w");
+    if (!fp) {
+        printf("can't create point file, check authorization please.\n");
+        return -1;
+    }
+  printf("\nGenerating the point file...\n");
+    while(p != NULL) {
+        fprintf(fp, "%s\n", p -> location);
+        p = p -> next;
+    }
+    fclose(fp);
+}
+
+/** input dict, x, y, return a pointer points to the node, which
+ * location is (x, y) */
+node_ptr searchByCoordinate(node_ptr dictHead, double pointX, double pointY) {
+
+    node_ptr p = dictHead -> next;
+    while(p != NULL) {
+        /* if found the record */
+        if (getXCoordinate(p -> location) == pointX && getYCoordinate(p -> location) == pointY) {
+            return p;
+        }
+        p = p -> next;
+    }
+
+    /* if not found the record */
+    printf("WARNING: No record.\n");
+    return NULL;
+}
+
+/** input dict, x, return a pointer points to the node, which
+ * location on (x, *). Used to find mid-X.  */
+node_ptr searchByX(node_ptr dictHead, double pointX) {
+
+    node_ptr p = dictHead -> next;
+    while(p != NULL) {
+        /* if found the record */
+        if (getXCoordinate(p -> location) == pointX) {
+            return p;
+        }
+        p = p -> next;
+    }
+
+    /* if not found the record */
+    printf("WARNING: No record.\n");
+    return NULL;
 }

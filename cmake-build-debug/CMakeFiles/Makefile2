@@ -94,12 +94,12 @@ clean: CMakeFiles/Assiginment2_Code.dir/clean
 CMakeFiles/Assiginment2_Code.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target Assiginment2_Code"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target Assiginment2_Code"
 .PHONY : CMakeFiles/Assiginment2_Code.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Assiginment2_Code.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Assiginment2_Code.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Assiginment2_Code.dir/rule

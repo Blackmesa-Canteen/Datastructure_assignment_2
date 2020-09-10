@@ -6,19 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.c
-stdio.h
--
-stdlib.h
--
-string.h
--
-dictFunctions.h
 /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.h
 
-/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.h
+/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.h
 
-/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.c
+/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c
 stdlib.h
 -
 stdio.h
@@ -29,6 +21,4 @@ list.h
 /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.h
 dictFunctions.h
 /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.h
-
-/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.h
 

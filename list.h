@@ -30,5 +30,7 @@ void searchAndOutput(node_ptr dictHead, FILE *fp, char* whatToFind);
 void freeList(node_ptr head);
 void searchByStdin(node_ptr dictList, FILE *fp);
 void searchByKeyFile(node_ptr dictList, FILE *fp, char* keyFileName);
+node_ptr searchByCoordinate(node_ptr dictHead, double pointX, double pointY);
+node_ptr searchByX(node_ptr dictHead, double pointX);
 
 #endif /* ASSIGNMENT_2_CODE_LIST_H */

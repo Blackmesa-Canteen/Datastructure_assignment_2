@@ -1,5 +1,5 @@
 /**
- *  Created by Xiaotian Li on 8/21/2020.
+ *  Created by Xiaotian Li on 9/10/2020.
  *
  *  This program is a simple dictionary based on a linked list to store information from
  *  the City of Melbourne Census of Land Use and Employment (CLUE). A user can search this
@@ -33,6 +33,7 @@
 #include <string.h>
 
 #include "list.h"
+#include "pointFunctions.h"
 
 int main(int argc, char  **argv) {
 
@@ -80,6 +81,7 @@ int main(int argc, char  **argv) {
         searchByStdin(dictList, fp);
     }
 
+    printf("asdasd = %f\n", findMedianX(dictList));
     freeList(dictList);
     fclose(fp);
     printf("\n*********Thank you for using. *********\n");

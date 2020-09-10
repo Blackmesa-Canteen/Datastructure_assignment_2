@@ -116,11 +116,39 @@ CMakeFiles/Assiginment2_Code.dir/list.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assiginment2_Code.dir/list.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.c -o CMakeFiles/Assiginment2_Code.dir/list.c.s
 
+CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o: CMakeFiles/Assiginment2_Code.dir/flags.make
+CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o: ../pointFunctions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c
+
+CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c > CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.i
+
+CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c -o CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.s
+
+CMakeFiles/Assiginment2_Code.dir/kdTree.c.o: CMakeFiles/Assiginment2_Code.dir/flags.make
+CMakeFiles/Assiginment2_Code.dir/kdTree.c.o: ../kdTree.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Assiginment2_Code.dir/kdTree.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/kdTree.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.c
+
+CMakeFiles/Assiginment2_Code.dir/kdTree.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assiginment2_Code.dir/kdTree.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.c > CMakeFiles/Assiginment2_Code.dir/kdTree.c.i
+
+CMakeFiles/Assiginment2_Code.dir/kdTree.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assiginment2_Code.dir/kdTree.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.c -o CMakeFiles/Assiginment2_Code.dir/kdTree.c.s
+
 # Object files for target Assiginment2_Code
 Assiginment2_Code_OBJECTS = \
 "CMakeFiles/Assiginment2_Code.dir/main.c.o" \
 "CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o" \
-"CMakeFiles/Assiginment2_Code.dir/list.c.o"
+"CMakeFiles/Assiginment2_Code.dir/list.c.o" \
+"CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o" \
+"CMakeFiles/Assiginment2_Code.dir/kdTree.c.o"
 
 # External object files for target Assiginment2_Code
 Assiginment2_Code_EXTERNAL_OBJECTS =
@@ -128,9 +156,11 @@ Assiginment2_Code_EXTERNAL_OBJECTS =
 Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/main.c.o
 Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o
 Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/list.c.o
+Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o
+Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/kdTree.c.o
 Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/build.make
 Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable Assiginment2_Code"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable Assiginment2_Code"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Assiginment2_Code.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
