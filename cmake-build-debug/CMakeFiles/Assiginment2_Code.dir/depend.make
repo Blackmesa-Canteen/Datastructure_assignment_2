@@ -4,12 +4,18 @@
 CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o: ../dictFunctions.c
 CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o: ../dictFunctions.h
 
+CMakeFiles/Assiginment2_Code.dir/kdTree.c.o: ../dictFunctions.h
 CMakeFiles/Assiginment2_Code.dir/kdTree.c.o: ../kdTree.c
+CMakeFiles/Assiginment2_Code.dir/kdTree.c.o: ../kdTree.h
+CMakeFiles/Assiginment2_Code.dir/kdTree.c.o: ../list.h
+CMakeFiles/Assiginment2_Code.dir/kdTree.c.o: ../pointFunctions.h
 
 CMakeFiles/Assiginment2_Code.dir/list.c.o: ../dictFunctions.h
 CMakeFiles/Assiginment2_Code.dir/list.c.o: ../list.c
 CMakeFiles/Assiginment2_Code.dir/list.c.o: ../list.h
+CMakeFiles/Assiginment2_Code.dir/list.c.o: ../pointFunctions.h
 
+CMakeFiles/Assiginment2_Code.dir/main.c.o: ../kdTree.h
 CMakeFiles/Assiginment2_Code.dir/main.c.o: ../list.h
 CMakeFiles/Assiginment2_Code.dir/main.c.o: ../main.c
 CMakeFiles/Assiginment2_Code.dir/main.c.o: ../pointFunctions.h

@@ -12,73 +12,166 @@
 
 #define MAXLENGTH 512
 
-/** 绝对不要直接传入字典头节点！！！！ */
-node_ptr creatTreeNodes(treeNode_ptr parent, node_ptr dict) {
+
+/** 绝对不要直接传入字典头节点, 要间接传入！！！！ */
+treeNode_ptr initTree(node_ptr p_dict) {
+    double midX = 0;
+    treeNode_ptr root = (treeNode_ptr) calloc(1, sizeof(treeNode_t));
+    midX = findMedianX(p_dict); // find median x
+    node_ptr p_dict_midPoint = NULL;
+    p_dict_midPoint = searchByX(p_dict, midX);
+
+    root->location = copyString(p_dict_midPoint->location);
+    root->nodeX = getXCoordinate(p_dict_midPoint->location);
+    root->nodeY = getYCoordinate(p_dict_midPoint->location);
+    root->name = copyString(p_dict_midPoint->key);
+    root->censusYear = p_dict_midPoint->censusYear;
+    root->blockId = p_dict_midPoint->blockId;
+    root->propertyId = p_dict_midPoint->propertyId;
+    root->basePropertyId = p_dict_midPoint->basePropertyId;
+    root->clueSmallArea = p_dict_midPoint->clueSmallArea;
+    root->industryCode = p_dict_midPoint->industryCode;
+    root->industryDescription = copyString(p_dict_midPoint->industryDescription);
+    root->xCoordinate = p_dict_midPoint->xCoordinate;
+    root->yCoordinate = p_dict_midPoint->yCoordinate;
+
+    root->dimension = 'x';
+    root->parentNode = NULL;
+    root->next = NULL;
+    root->left = NULL;
+    root->right = NULL;
+
+    return root;
+}
+
+/** Creating K-D tree */
+treeNode_ptr creatTreeNodes(treeNode_ptr parent, treeNode_ptr ancestor,
+                            node_ptr p_dict, char dimension) {
 
     if (parent == NULL) {
         parent = (treeNode_ptr) calloc(1, sizeof(treeNode_t));
-        double midX = findMedianX(dict); // find median x
-        node_ptr p_dict_midPoint = NULL;
-        p_dict_midPoint = searchByX(dict, midX);
 
-        parent->location = copyString(p_dict_midPoint->location);
-        parent->nodeX = getXCoordinate(p_dict_midPoint->location);
-        parent->nodeY = getYCoordinate(p_dict_midPoint->location);
-        parent->name = copyString(p_dict_midPoint->key);
-        parent->censusYear = p_dict_midPoint->censusYear;
-        parent->blockId = p_dict_midPoint->blockId;
-        parent->propertyId = p_dict_midPoint->propertyId;
-        parent->basePropertyId = p_dict_midPoint->basePropertyId;
-        parent->clueSmallArea = p_dict_midPoint->clueSmallArea;
-        parent->industryCode = p_dict_midPoint->industryCode;
-        parent->industryDescription = copyString(p_dict_midPoint->industryDescription);
-        parent->xCoordinate = p_dict_midPoint->xCoordinate;
-        parent->yCoordinate = p_dict_midPoint->yCoordinate;
+        parent->location = copyString(p_dict->location);
+        parent->nodeX = getXCoordinate(p_dict->location);
+        parent->nodeY = getYCoordinate(p_dict->location);
+        parent->name = copyString(p_dict->key);
+        parent->censusYear = p_dict->censusYear;
+        parent->blockId = p_dict->blockId;
+        parent->propertyId = p_dict->propertyId;
+        parent->basePropertyId = p_dict->basePropertyId;
+        parent->clueSmallArea = p_dict->clueSmallArea;
+        parent->industryCode = p_dict->industryCode;
+        parent->industryDescription = copyString(p_dict->industryDescription);
+        parent->xCoordinate = p_dict->xCoordinate;
+        parent->yCoordinate = p_dict->yCoordinate;
 
-        parent->dimension = 'x';
-        parent->parentNode = NULL;
+        parent->dimension = dimension;
+        parent->parentNode = ancestor;
         parent->next = NULL;
         parent->left = NULL;
         parent->right = NULL;
 
-        free(p_dict_midPoint);
+    } else if (parent->dimension == 'x' &&
+                getXCoordinate(p_dict->location) < parent->nodeX &&
+                getYCoordinate(p_dict->location) != parent->nodeY) {
 
+        parent->left = creatTreeNodes(parent->left, parent, p_dict, 'y');
 
     } else if (parent->dimension == 'x' &&
-                getXCoordinate(dict->location) < parent->nodeX &&
-                getYCoordinate(dict->location) != parent->nodeY) {
+               getXCoordinate(p_dict->location) >= parent->nodeX &&
+               getYCoordinate(p_dict->location) != parent->nodeY) {
 
-        dict = dict->next;
-        parent->left = creatTreeNodes(parent->left, dict);
-
-    } else if (parent->dimension == 'x' &&
-               getXCoordinate(dict->location) >= parent->nodeX &&
-               getYCoordinate(dict->location) != parent->nodeY) {
-
-        dict = dict->next;
-        parent->right = creatTreeNodes(parent->right, dict);
+        parent->right = creatTreeNodes(parent->right, parent, p_dict, 'y');
 
     } else if (parent->dimension == 'y' &&
-               getXCoordinate(dict->location) != parent->nodeX &&
-               getYCoordinate(dict->location) < parent->nodeY) {
+               getXCoordinate(p_dict->location) != parent->nodeX &&
+               getYCoordinate(p_dict->location) < parent->nodeY) {
 
-        dict = dict->next;
-        parent->left = creatTreeNodes(parent->left, dict);
+        parent->left = creatTreeNodes(parent->left, parent, p_dict, 'x');
 
     } else if (parent->dimension == 'y' &&
-              getXCoordinate(dict->location) != parent->nodeX &&
-              getYCoordinate(dict->location) >= parent->nodeY) {
+              getXCoordinate(p_dict->location) != parent->nodeX &&
+              getYCoordinate(p_dict->location) >= parent->nodeY) {
 
-        dict = dict->next;
-        parent->right = creatTreeNodes(parent->right, dict);
+        parent->right = creatTreeNodes(parent->right, parent, p_dict, 'x');
 
-    } else if (getXCoordinate(dict->location) == parent->nodeX &&
-              getYCoordinate(dict->location) == parent->nodeY) {
-
-        dict = dict->next;
-        parent->right = creatTreeNodes(parent->right, dict);
-
+    } else if (getXCoordinate(p_dict->location) == parent->nodeX &&
+              getYCoordinate(p_dict->location) == parent->nodeY) {
+        if (parent->dimension == 'x') {
+            parent->next = creatTreeLink(parent->next, parent, p_dict, 'x');
+        } else {
+            parent->next = creatTreeLink(parent->next, parent, p_dict, 'y');
+        }
     }
 
+    return parent;
+}
 
+/** Creating linked list */
+treeNode_ptr creatTreeLink(treeNode_ptr parent, treeNode_ptr ancestor, node_ptr p_dict, char dimension) {
+
+    if(parent == NULL) {
+        parent = (treeNode_ptr) calloc(1, sizeof(treeNode_t));
+
+        parent->location = copyString(p_dict->location);
+        parent->nodeX = getXCoordinate(p_dict->location);
+        parent->nodeY = getYCoordinate(p_dict->location);
+        parent->name = copyString(p_dict->key);
+        parent->censusYear = p_dict->censusYear;
+        parent->blockId = p_dict->blockId;
+        parent->propertyId = p_dict->propertyId;
+        parent->basePropertyId = p_dict->basePropertyId;
+        parent->clueSmallArea = p_dict->clueSmallArea;
+        parent->industryCode = p_dict->industryCode;
+        parent->industryDescription = copyString(p_dict->industryDescription);
+        parent->xCoordinate = p_dict->xCoordinate;
+        parent->yCoordinate = p_dict->yCoordinate;
+
+        parent->dimension = dimension;
+        parent->parentNode = ancestor;
+        parent->next = NULL;
+        parent->left = NULL;
+        parent->right = NULL;
+    } else {
+        parent->next = creatTreeLink(parent->next, parent, p_dict, parent->dimension);
+    }
+
+    return parent;
+}
+
+void deleteATreeNode(treeNode_ptr p_root) {
+
+    treeNode_ptr p = p_root;
+    if(p->next != NULL) {
+        p = p->next;
+    }
+    free(p);
+    p = NULL;
+}
+
+/** create a K-D tree */
+treeNode_ptr deployKdTree(node_ptr dictHead) {
+    node_ptr p_dict = dictHead;
+    treeNode_ptr p_tree = NULL;
+
+    char* midLocation = NULL;
+    char* midName = NULL;
+
+    p_tree = initTree(p_dict);
+    midLocation = copyString(p_tree->location);
+    midName = copyString(p_tree->name);
+    p_dict = p_dict->next;
+
+    while(p_dict != NULL) {
+        printf("xsx \n");
+        printf("读到了: %s\n", p_dict->key);
+        if(p_dict != NULL && !strcmp(p_dict->location, midLocation) &&
+           !strcmp(p_dict->key, midName)) {
+            p_dict = p_dict->next; // skip duplicating record in root.
+        }
+        creatTreeNodes(p_tree, NULL, p_dict, 'x');
+        p_dict = p_dict->next;
+    }
+
+    return p_tree;
 }

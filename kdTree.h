@@ -25,10 +25,16 @@ typedef struct treeNode {
 
     char dimension; // 'x' or 'y'
     struct treeNode* parentNode;
-    struct node* next;
+    struct treeNode* next;
     struct treeNode* left;
     struct treeNode* right;
 } treeNode_t;
 
 typedef treeNode_t* treeNode_ptr;
+treeNode_ptr creatTreeLink(treeNode_ptr parent, treeNode_ptr ancestor, node_ptr p_dict, char dimension);
+treeNode_ptr initTree(node_ptr p_dict);
+treeNode_ptr creatTreeNodes(treeNode_ptr parent, treeNode_ptr ancestor,
+                            node_ptr p_dict, char dimension);
+treeNode_ptr creatTreeLink(treeNode_ptr parent, treeNode_ptr ancestor, node_ptr p_dict, char dimension);
+treeNode_ptr deployKdTree(node_ptr dictHead);
 #endif //ASSIGINMENT2_CODE_KDTREE_H

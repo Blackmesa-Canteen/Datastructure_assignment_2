@@ -123,5 +123,3 @@ double findMedianX(node_ptr dictHead) {
     index = (pointCount/2 + 1) - 1;
     return xArray[index];
 }
-
-

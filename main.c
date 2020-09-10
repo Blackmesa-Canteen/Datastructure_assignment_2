@@ -34,6 +34,7 @@
 
 #include "list.h"
 #include "pointFunctions.h"
+#include "kdTree.h"
 
 int main(int argc, char  **argv) {
 
@@ -69,19 +70,19 @@ int main(int argc, char  **argv) {
     fclose(fp);
 
     /* creat output file */
-    fp = fopen(outputFileName, "w");
-    if (!fp) {
-        printf("can't create file '%s'\n", outputFileName);
-        return -1;
-    }
+//    fp = fopen(outputFileName, "w");
+//    if (!fp) {
+//        printf("can't create file '%s'\n", outputFileName);
+//        return -1;
+//    }
+//
+//    if (inputMethod == 2) {
+//        searchByKeyFile(dictList, fp, keyFileName);
+//    } else {
+//        searchByStdin(dictList, fp);
+//    }
 
-    if (inputMethod == 2) {
-        searchByKeyFile(dictList, fp, keyFileName);
-    } else {
-        searchByStdin(dictList, fp);
-    }
-
-    printf("asdasd = %f\n", findMedianX(dictList));
+    treeNode_ptr p_root = deployKdTree(dictList);
     freeList(dictList);
     fclose(fp);
     printf("\n*********Thank you for using. *********\n");
