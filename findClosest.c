@@ -32,6 +32,7 @@ double getX(char* buffer) {
     return x;
 }
 
+/* get y coordinate from  input */
 double getY(char* buffer) {
     double y = 0;
     char* yStr = NULL;
@@ -104,46 +105,44 @@ double distanceCalc(treeNode_ptr p_node, treeNode_ptr p_target) {
 void countCompare(int *compareCounter) {
     int a;
     a = *compareCounter;
-    free(compareCounter);
-    compareCounter = NULL;
+//    free(compareCounter);
+//    compareCounter = NULL;
     a += 1;
     compareCounter = &a;
 }
 
 /* find nearest point, p_best will point to it */
 void nearest(treeNode_ptr p_root, treeNode_ptr p_target,
-            treeNode_ptr p_best, double *best_D, int *compareCounter)
+            treeNode_ptr* p_best, double *best_D, int *compareCounter)
 {
-    double d, dMQ, dMQ2;
+    double d, dMQ;
 
     if (p_root == NULL) return;
     d = distanceCalc(p_root, p_target);
     if(p_root->dimension == 'x') {
         dMQ = p_root->nodeX - p_target->nodeX;
-        dMQ2 = pow(dMQ, 2);
     } else if (p_root->dimension == 'y') {
         dMQ = p_root->nodeY - p_target->nodeY;
-        dMQ2 = pow(dMQ, 2);
     }
 
-    if (p_best == NULL || d < *best_D) {
+    if (*p_best == NULL || d < *best_D) {
         *best_D = d;
-        p_best = p_root;
+        *p_best = p_root;
     }
 
     /* if it is the same position */
     if (*best_D == 0) return;
     if (dMQ > 0) {
         nearest(p_root->left, p_target, p_best, best_D, compareCounter);
-        countCompare(compareCounter);
+        //countCompare(compareCounter);
     } else {
         nearest(p_root->right, p_target, p_best, best_D, compareCounter);
-        countCompare(compareCounter);
+        //countCompare(compareCounter);
     }
 
-    if (dMQ2 >= pow((*best_D), 2)) return; // if the circle is bigger than distance MQ
+    if (pow(dMQ, 2) >= pow((*best_D), 2)) return; // if the circle is bigger than distance MQ
     nearest(dMQ > 0 ? p_root->right : p_root->left, p_target, p_best, best_D, compareCounter);
-    countCompare(compareCounter);
+    //countCompare(compareCounter);
 }
 
 void searchClosest(treeNode_ptr root, FILE *outfile) {
@@ -153,7 +152,6 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
     size_t whatToFindNumber = 0;
     double targetX = 0;
     double targetY = 0;
-    double d = 0;
     treeNode_ptr p_root = NULL;
     treeNode_ptr p_target = NULL;
     treeNode_ptr p_best = NULL;
@@ -162,7 +160,7 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
 
     while(1) {
         fflush(stdin);
-        printf("\n$ Please input a business name to "
+        printf("\n$ Please input accordinate to "
                "search (input \"quit!\" to stop input): ");
         if (getline(&whatToFind, &whatToFindNumber, stdin) == EOF) {
             /* detect ending of stdin if users use < operator in bash */
@@ -170,7 +168,6 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
         }
         trimLastEnter(whatToFind); /* trim '\n' at the end of the string */
         if (!strcmp(quitCommand, whatToFind)) {
-            printf("\nEnd of searching\n");
             break;
         }
 
@@ -182,16 +179,28 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
         p_target->nodeX = targetX;
         p_target->nodeY = targetY;
         compareCounter = 0;
-        nearest(p_root, p_target, p_best, &bestD, &compareCounter);
-
+        nearest(p_root, p_target, &p_best, &bestD, &compareCounter);
         /* output compare times through stdout */
         printf("%f %f --> %d\n", targetX, targetY, compareCounter);
 
-        //d = distanceCalc(p_close, targetX, targetY);
+        while(p_best != NULL) {
+            fprintf(outfile,"%f %f --> ", targetX, targetY);
+            fprintf(outfile, "Census year: %d || ", p_best -> censusYear);
+            fprintf(outfile, "Block ID: %d || ", p_best -> blockId);
+            fprintf(outfile, "Property ID: %d || ", p_best -> propertyId);
+            fprintf(outfile, "Base property ID: %d || ", p_best -> basePropertyId);
+            fprintf(outfile, "CLUE small area: %s || ", p_best -> clueSmallArea);
+            fprintf(outfile, "Industry (ANZSIC4) code: %d || ", p_best -> industryCode);
+            fprintf(outfile, "Industry (ANZSIC4) description: %s || ", p_best -> industryDescription);
+            fprintf(outfile, "x coordinate: %.5f || ", p_best -> xCoordinate);
+            fprintf(outfile, "y coordinate: %.5f || ", p_best -> yCoordinate);
+            fprintf(outfile, "Location: %s || \n", p_best -> location);
 
-
+            p_best = p_best->next;
+        }
+        free(p_target);
+        free(whatToFind);
+        whatToFind = NULL;
     }
-
-    free(whatToFind);
 }
 

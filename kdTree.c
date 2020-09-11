@@ -13,7 +13,7 @@
 #define MAXLENGTH 512
 
 
-/** 绝对不要直接传入字典头节点, 要间接传入！！！！ */
+/** setup root */
 treeNode_ptr initTree(node_ptr p_dict) {
     double midX = 0;
     treeNode_ptr root = (treeNode_ptr) calloc(1, sizeof(treeNode_t));
@@ -29,7 +29,7 @@ treeNode_ptr initTree(node_ptr p_dict) {
     root->blockId = p_dict_midPoint->blockId;
     root->propertyId = p_dict_midPoint->propertyId;
     root->basePropertyId = p_dict_midPoint->basePropertyId;
-    root->clueSmallArea = p_dict_midPoint->clueSmallArea;
+    root->clueSmallArea = copyString(p_dict_midPoint->clueSmallArea);
     root->industryCode = p_dict_midPoint->industryCode;
     root->industryDescription = copyString(p_dict_midPoint->industryDescription);
     root->xCoordinate = p_dict_midPoint->xCoordinate;
@@ -59,7 +59,7 @@ treeNode_ptr creatTreeNodes(treeNode_ptr parent, treeNode_ptr ancestor,
         parent->blockId = p_dict->blockId;
         parent->propertyId = p_dict->propertyId;
         parent->basePropertyId = p_dict->basePropertyId;
-        parent->clueSmallArea = p_dict->clueSmallArea;
+        parent->clueSmallArea = copyString(p_dict->clueSmallArea);
         parent->industryCode = p_dict->industryCode;
         parent->industryDescription = copyString(p_dict->industryDescription);
         parent->xCoordinate = p_dict->xCoordinate;
@@ -128,7 +128,7 @@ treeNode_ptr creatTreeLink(treeNode_ptr parent, treeNode_ptr ancestor, node_ptr 
         parent->blockId = p_dict->blockId;
         parent->propertyId = p_dict->propertyId;
         parent->basePropertyId = p_dict->basePropertyId;
-        parent->clueSmallArea = p_dict->clueSmallArea;
+        parent->clueSmallArea = copyString(p_dict->clueSmallArea);
         parent->industryCode = p_dict->industryCode;
         parent->industryDescription = copyString(p_dict->industryDescription);
         parent->xCoordinate = p_dict->xCoordinate;

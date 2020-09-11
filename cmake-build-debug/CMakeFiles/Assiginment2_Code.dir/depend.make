@@ -22,6 +22,8 @@ CMakeFiles/Assiginment2_Code.dir/list.c.o: ../list.c
 CMakeFiles/Assiginment2_Code.dir/list.c.o: ../list.h
 CMakeFiles/Assiginment2_Code.dir/list.c.o: ../pointFunctions.h
 
+CMakeFiles/Assiginment2_Code.dir/main.c.o: ../dictFunctions.h
+CMakeFiles/Assiginment2_Code.dir/main.c.o: ../findClosest.h
 CMakeFiles/Assiginment2_Code.dir/main.c.o: ../kdTree.h
 CMakeFiles/Assiginment2_Code.dir/main.c.o: ../list.h
 CMakeFiles/Assiginment2_Code.dir/main.c.o: ../main.c

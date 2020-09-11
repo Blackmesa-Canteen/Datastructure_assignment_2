@@ -38,6 +38,7 @@
 #include "list.h"
 #include "pointFunctions.h"
 #include "kdTree.h"
+#include "findClosest.h"
 
 int main(int argc, char  **argv) {
 
@@ -83,8 +84,10 @@ int main(int argc, char  **argv) {
 
     treeNode_ptr p_root = deployKdTree(dictList);
     freeList(dictList);
+    searchClosest(p_root, fp);
     fclose(fp);
     printf("\n*********Thank you for using. *********\n");
+
     fflush(stdout);
 
     return 0;
