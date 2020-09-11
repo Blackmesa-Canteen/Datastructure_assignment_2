@@ -80,67 +80,80 @@ include CMakeFiles/Assiginment2_Code.dir/flags.make
 CMakeFiles/Assiginment2_Code.dir/main.c.o: CMakeFiles/Assiginment2_Code.dir/flags.make
 CMakeFiles/Assiginment2_Code.dir/main.c.o: ../main.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Assiginment2_Code.dir/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/main.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/main.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/main.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/main.c
 
 CMakeFiles/Assiginment2_Code.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assiginment2_Code.dir/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/main.c > CMakeFiles/Assiginment2_Code.dir/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/main.c > CMakeFiles/Assiginment2_Code.dir/main.c.i
 
 CMakeFiles/Assiginment2_Code.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assiginment2_Code.dir/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/main.c -o CMakeFiles/Assiginment2_Code.dir/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/main.c -o CMakeFiles/Assiginment2_Code.dir/main.c.s
 
 CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o: CMakeFiles/Assiginment2_Code.dir/flags.make
 CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o: ../dictFunctions.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.c
 
 CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.c > CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.c > CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.i
 
 CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.c -o CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/dictFunctions.c -o CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.s
 
 CMakeFiles/Assiginment2_Code.dir/list.c.o: CMakeFiles/Assiginment2_Code.dir/flags.make
 CMakeFiles/Assiginment2_Code.dir/list.c.o: ../list.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Assiginment2_Code.dir/list.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/list.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/list.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.c
 
 CMakeFiles/Assiginment2_Code.dir/list.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assiginment2_Code.dir/list.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.c > CMakeFiles/Assiginment2_Code.dir/list.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.c > CMakeFiles/Assiginment2_Code.dir/list.c.i
 
 CMakeFiles/Assiginment2_Code.dir/list.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assiginment2_Code.dir/list.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.c -o CMakeFiles/Assiginment2_Code.dir/list.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/list.c -o CMakeFiles/Assiginment2_Code.dir/list.c.s
 
 CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o: CMakeFiles/Assiginment2_Code.dir/flags.make
 CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o: ../pointFunctions.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c
 
 CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c > CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c > CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.i
 
 CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c -o CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/pointFunctions.c -o CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.s
 
 CMakeFiles/Assiginment2_Code.dir/kdTree.c.o: CMakeFiles/Assiginment2_Code.dir/flags.make
 CMakeFiles/Assiginment2_Code.dir/kdTree.c.o: ../kdTree.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Assiginment2_Code.dir/kdTree.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/kdTree.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/kdTree.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.c
 
 CMakeFiles/Assiginment2_Code.dir/kdTree.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assiginment2_Code.dir/kdTree.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.c > CMakeFiles/Assiginment2_Code.dir/kdTree.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.c > CMakeFiles/Assiginment2_Code.dir/kdTree.c.i
 
 CMakeFiles/Assiginment2_Code.dir/kdTree.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assiginment2_Code.dir/kdTree.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.c -o CMakeFiles/Assiginment2_Code.dir/kdTree.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/kdTree.c -o CMakeFiles/Assiginment2_Code.dir/kdTree.c.s
+
+CMakeFiles/Assiginment2_Code.dir/findClosest.c.o: CMakeFiles/Assiginment2_Code.dir/flags.make
+CMakeFiles/Assiginment2_Code.dir/findClosest.c.o: ../findClosest.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Assiginment2_Code.dir/findClosest.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assiginment2_Code.dir/findClosest.c.o   -c /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/findClosest.c
+
+CMakeFiles/Assiginment2_Code.dir/findClosest.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assiginment2_Code.dir/findClosest.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/findClosest.c > CMakeFiles/Assiginment2_Code.dir/findClosest.c.i
+
+CMakeFiles/Assiginment2_Code.dir/findClosest.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assiginment2_Code.dir/findClosest.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/findClosest.c -o CMakeFiles/Assiginment2_Code.dir/findClosest.c.s
 
 # Object files for target Assiginment2_Code
 Assiginment2_Code_OBJECTS = \
@@ -148,7 +161,8 @@ Assiginment2_Code_OBJECTS = \
 "CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o" \
 "CMakeFiles/Assiginment2_Code.dir/list.c.o" \
 "CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o" \
-"CMakeFiles/Assiginment2_Code.dir/kdTree.c.o"
+"CMakeFiles/Assiginment2_Code.dir/kdTree.c.o" \
+"CMakeFiles/Assiginment2_Code.dir/findClosest.c.o"
 
 # External object files for target Assiginment2_Code
 Assiginment2_Code_EXTERNAL_OBJECTS =
@@ -158,9 +172,10 @@ Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.o
 Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/list.c.o
 Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/pointFunctions.c.o
 Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/kdTree.c.o
+Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/findClosest.c.o
 Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/build.make
 Assiginment2_Code: CMakeFiles/Assiginment2_Code.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable Assiginment2_Code"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/shaotienlee/Desktop/Courses/DATA_STRUCTURE/Assginment/Assginment2/Assiginment2_Code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable Assiginment2_Code"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Assiginment2_Code.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

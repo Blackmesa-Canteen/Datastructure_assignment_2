@@ -163,8 +163,7 @@ treeNode_ptr deployKdTree(node_ptr dictHead) {
     p_dict = p_dict->next;
 
     while(p_dict != NULL) {
-        printf("xsx \n");
-        printf("读到了: %s\n", p_dict->key);
+        printf("readed: %s\n", p_dict->key); // test reading
         if(p_dict != NULL && !strcmp(p_dict->location, midLocation) &&
            !strcmp(p_dict->key, midName)) {
             p_dict = p_dict->next; // skip duplicating record in root.

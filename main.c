@@ -1,3 +1,7 @@
+//
+// Created by Shaotien Lee on 2020/9/10.
+//
+
 /**
  *  Created by Xiaotian Li on 9/10/2020.
  *
@@ -24,8 +28,7 @@
  *  Input Example 1:                Input Example 2:
  *  ~$ ./dict test.csv out.txt      ~$ ./dict test.csv out < keyfile
  *  ~$ Vacant
- *  ~$ Hello, world                 Input Example3:
- *     ...                          ~$ ./dict test.csv out.txt from keyfile
+ *  ~$ Hello, world
  *  ~$ quit!
  */
 
@@ -47,16 +50,16 @@ int main(int argc, char  **argv) {
         inputFileName = argv[1];
         outputFileName = argv[2];
         inputMethod = 1;
-    }
-    else if (argc == 5 && !strcmp(argv[3], "from")){
-        inputFileName = argv[1];
-        outputFileName = argv[2];
-        keyFileName = argv[4];
-        inputMethod = 2;
     } else {
         printf("ERROR: parameters!\n");
         return -1;
     }
+//    else if (argc == 5 && !strcmp(argv[3], "from")){
+//        inputFileName = argv[1];
+//        outputFileName = argv[2];
+//        keyFileName = argv[4];
+//        inputMethod = 2; }
+
 
     /* Open the input file with the given filename for reading */
     FILE *fp = fopen(inputFileName, "r");
@@ -70,17 +73,13 @@ int main(int argc, char  **argv) {
     fclose(fp);
 
     /* creat output file */
-//    fp = fopen(outputFileName, "w");
-//    if (!fp) {
-//        printf("can't create file '%s'\n", outputFileName);
-//        return -1;
-//    }
-//
-//    if (inputMethod == 2) {
-//        searchByKeyFile(dictList, fp, keyFileName);
-//    } else {
-//        searchByStdin(dictList, fp);
-//    }
+    fp = fopen(outputFileName, "w");
+    if (!fp) {
+        printf("can't create file '%s'\n", outputFileName);
+        return -1;
+    }
+
+    //searchByStdin(dictList, fp);
 
     treeNode_ptr p_root = deployKdTree(dictList);
     freeList(dictList);

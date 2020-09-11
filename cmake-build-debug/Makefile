@@ -170,6 +170,33 @@ dictFunctions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/dictFunctions.c.s
 .PHONY : dictFunctions.c.s
 
+findClosest.o: findClosest.c.o
+
+.PHONY : findClosest.o
+
+# target to build an object file
+findClosest.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/findClosest.c.o
+.PHONY : findClosest.c.o
+
+findClosest.i: findClosest.c.i
+
+.PHONY : findClosest.i
+
+# target to preprocess a source file
+findClosest.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/findClosest.c.i
+.PHONY : findClosest.c.i
+
+findClosest.s: findClosest.c.s
+
+.PHONY : findClosest.s
+
+# target to generate assembly for a file
+findClosest.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assiginment2_Code.dir/build.make CMakeFiles/Assiginment2_Code.dir/findClosest.c.s
+.PHONY : findClosest.c.s
+
 kdTree.o: kdTree.c.o
 
 .PHONY : kdTree.o
@@ -290,6 +317,9 @@ help:
 	@echo "... dictFunctions.o"
 	@echo "... dictFunctions.i"
 	@echo "... dictFunctions.s"
+	@echo "... findClosest.o"
+	@echo "... findClosest.i"
+	@echo "... findClosest.s"
 	@echo "... kdTree.o"
 	@echo "... kdTree.i"
 	@echo "... kdTree.s"
