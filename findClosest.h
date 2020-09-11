@@ -12,6 +12,7 @@
 double getX(char* buffer);
 double getY(char* buffer);
 double distanceCalc(treeNode_ptr p_node, double targetX, double targetY);
-void searchCloseAndOutput(treeNode_ptr root, FILE *outfile, double targetX, double targetY);
+void searchCloseAndOutput(treeNode_ptr p_tree, treeNode_ptr ancestor,
+                          FILE *outfile, double targetX, double targetY);
 void searchClosest(treeNode_ptr root, FILE *outfile);
 #endif //ASSIGINMENT2_CODE_FINDCLOSEST_H

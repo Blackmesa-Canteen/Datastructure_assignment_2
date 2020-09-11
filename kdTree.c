@@ -72,26 +72,33 @@ treeNode_ptr creatTreeNodes(treeNode_ptr parent, treeNode_ptr ancestor,
         parent->right = NULL;
 
     } else if (parent->dimension == 'x' &&
-                getXCoordinate(p_dict->location) < parent->nodeX &&
-                getYCoordinate(p_dict->location) != parent->nodeY) {
+                getXCoordinate(p_dict->location) < parent->nodeX) {
 
         parent->left = creatTreeNodes(parent->left, parent, p_dict, 'y');
 
     } else if (parent->dimension == 'x' &&
-               getXCoordinate(p_dict->location) >= parent->nodeX &&
+               getXCoordinate(p_dict->location) == parent->nodeX &&
                getYCoordinate(p_dict->location) != parent->nodeY) {
 
         parent->right = creatTreeNodes(parent->right, parent, p_dict, 'y');
 
+    } else if (parent->dimension == 'x' &&
+               getXCoordinate(p_dict->location) > parent->nodeX) {
+
+        parent->right = creatTreeNodes(parent->right, parent, p_dict, 'y');
+
     } else if (parent->dimension == 'y' &&
-               getXCoordinate(p_dict->location) != parent->nodeX &&
                getYCoordinate(p_dict->location) < parent->nodeY) {
 
         parent->left = creatTreeNodes(parent->left, parent, p_dict, 'x');
 
     } else if (parent->dimension == 'y' &&
               getXCoordinate(p_dict->location) != parent->nodeX &&
-              getYCoordinate(p_dict->location) >= parent->nodeY) {
+              getYCoordinate(p_dict->location) == parent->nodeY) {
+
+        parent->right = creatTreeNodes(parent->right, parent, p_dict, 'x');
+    } else if (parent->dimension == 'y' &&
+               getYCoordinate(p_dict->location) > parent->nodeY) {
 
         parent->right = creatTreeNodes(parent->right, parent, p_dict, 'x');
 

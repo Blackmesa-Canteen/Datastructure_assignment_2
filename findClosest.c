@@ -11,7 +11,8 @@
 #include "dictFunctions.h"
 #include "findClosest.h"
 
-/* 231.343 3454.7 */
+int searchCounter = 0;
+/* get x coordinate from  input */
 double getX(char* buffer) {
     double x = 0;
     char* xStr = NULL;
@@ -63,18 +64,24 @@ double distanceCalc(treeNode_ptr p_node, double targetX, double targetY) {
     return answer;
 }
 
-void searchCloseAndOutput(treeNode_ptr root, FILE *outfile, double targetX, double targetY) {
+void searchCloseAndOutput(treeNode_ptr p_tree, treeNode_ptr ancestor,
+                          FILE *outfile, double targetX, double targetY) {
 
-    treeNode_ptr p_tree = root;
     treeNode_ptr nearest = NULL;
     double distance = 0;
 
-    while(p_tree != NULL) {
+    if (p_tree == NULL) {
+        distance = distanceCalc(ancestor, targetX, targetY);
+        nearest = ancestor;
 
+
+    } else if (p_tree->dimension == 'x' && targetX < p_tree->nodeX) {
+        searchCloseAndOutput(p_tree->left, p_tree,
+                outfile, targetX, targetY);
+    } else if (p_tree->dimension == 'x' && targetX > p_tree->nodeX) {
+        searchCloseAndOutput(p_tree->right, p_tree,
+                             outfile, targetX, targetY);
     }
-//    if (p_tree->right == NULL && p_tree->left == NULL) {
-//        distance = distanceCalc(p_tree, targetX, targetY);
-//    } else if (root->dimension == 'x' && targetX)
 
 }
 
@@ -85,6 +92,7 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
     size_t whatToFindNumber = 0;
     double targetX = 0;
     double targetY = 0;
+    treeNode_ptr p_tree = NULL;
 
     while(1) {
         fflush(stdin);
@@ -101,7 +109,8 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
         }
         targetX = getX(whatToFind);
         targetY = getY(whatToFind);
-        searchCloseAndOutput(root, outfile, targetX, targetY);
+        p_tree = root;
+        searchCloseAndOutput(p_tree, NULL, outfile, targetX, targetY);
     }
 
     free(whatToFind);
