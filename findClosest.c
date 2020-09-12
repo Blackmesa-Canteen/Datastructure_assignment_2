@@ -138,6 +138,8 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
 
         targetX = getX(whatToFind);
         targetY = getY(whatToFind);
+        free(whatToFind);
+        whatToFind = NULL;
 
         p_root = root;
         p_target = (treeNode_ptr) calloc(1, sizeof(treeNode_t));
@@ -164,8 +166,7 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
             p_best = p_best->next;
         }
         free(p_target);
-        free(whatToFind);
-        whatToFind = NULL;
+
     }
 }
 

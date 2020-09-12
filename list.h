@@ -3,6 +3,7 @@
  * This header file contains declaration of linked list used to stored records,
  * list pointer, and functions about the list.
  */
+#include<stdio.h>
 
 #ifndef ASSIGNMENT_2_CODE_LIST_H
 #define ASSIGNMENT_2_CODE_LIST_H

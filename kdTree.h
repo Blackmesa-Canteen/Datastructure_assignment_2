@@ -37,4 +37,6 @@ treeNode_ptr creatTreeNodes(treeNode_ptr parent, treeNode_ptr ancestor,
                             node_ptr p_dict, char dimension);
 treeNode_ptr creatTreeLink(treeNode_ptr parent, treeNode_ptr ancestor, node_ptr p_dict, char dimension);
 treeNode_ptr deployKdTree(node_ptr dictHead);
+void freeTreeList(treeNode_ptr head);
+void freeTree(treeNode_ptr parent);
 #endif //ASSIGINMENT2_CODE_KDTREE_H

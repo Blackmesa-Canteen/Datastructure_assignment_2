@@ -3,7 +3,6 @@
 //
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 
 #include "list.h"
@@ -106,6 +105,7 @@ double findMedianX(node_ptr dictHead) {
     int pointCount = 0;// count how many points
     int i = 0;
     int index = 0; // index for median x
+    double answer = 0;
 
     while(p != NULL) {
         pointCount++; // count points
@@ -122,5 +122,7 @@ double findMedianX(node_ptr dictHead) {
 
     quickSort(xArray, 0, pointCount - 1);
     index = (pointCount/2 + 1) - 1;
-    return xArray[index];
+    answer = xArray[index];
+    free(xArray);
+    return answer;
 }

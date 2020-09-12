@@ -1,34 +1,27 @@
-//
-// Created by Shaotien Lee on 2020/9/10.
-//
-
 /**
  *  Created by Xiaotian Li on 9/10/2020.
  *
- *  This program is a simple dictionary based on a linked list to store information from
- *  the City of Melbourne Census of Land Use and Employment (CLUE). A user can search this
- *  dictionary to retrieve information about businesses in Melbourne using the business name.
+ *  In this assignment, a K-D tree is created to support interactive map functionality for
+ *  the City of Melbourne Census of Land Use and Employment (CLUE) dataset. A user will be
+ *  able to query locations to find nearby businesses.
+ *  This main function is for stage 1: nearest find.
  *
  *  Input:
  *  > This program can take two command line arguments: (1) the name of the source file (.csv
  *    file stores CLUE data), and (2) the name of an output file. When the program is running,
- *    a user could input one business name (key) from the screen at a time. The program keeps
- *    asking the user to enter key values until 'quit!' is typed.
- *  > This program can also take four command line arguments: (1) the name of the source file
- *    (the .csv file stores CLUE data), (2) the name of an output file, (3)  the word "from",
- *    and (4) the name of the key file. The key file should contain keys to be searched, one
- *    per line.
- *  > Users can also use the UNIX operator < to redirect input from a file that has keys to
- *    be searched, one per line.
+ *    a user could input one coordinate from the screen at a time. The program keeps asking
+ *    the user to enter key values until 'quit!' is typed.
+ *  > Users can also use the UNIX operator < to redirect input from a file that has coordinates
+ *    to be searched, one per line.
  *
  *  Output:
- *  program will look up each key and output the matched record to the output file specified by
- *  the second command line parameter. If the key is not found, NOT FOUND would be output.
+ *  > The number of key comparisons performed during the search is written to stdout.
+ *  > An outfile contains target points coordinate and their nearest company(s).
  *
  *  Input Example 1:                Input Example 2:
- *  ~$ ./dict test.csv out.txt      ~$ ./dict test.csv out < keyfile
- *  ~$ Vacant
- *  ~$ Hello, world
+ *  ~$ ./dict test.csv out.txt      ~$ ./dict test.csv out < testfile
+ *  ~$ 0 0
+ *  ~$ 114.514 -19.19
  *  ~$ quit!
  */
 
@@ -44,13 +37,10 @@ int main(int argc, char  **argv) {
 
     char* inputFileName = NULL;
     char* outputFileName = NULL;
-    char* keyFileName = NULL;
-    int inputMethod = 0;
 
     if (argc == 3) {
         inputFileName = argv[1];
         outputFileName = argv[2];
-        inputMethod = 1;
     } else {
         printf("ERROR: parameters!\n");
         return -1;
@@ -74,14 +64,12 @@ int main(int argc, char  **argv) {
         return -1;
     }
 
-    //searchByStdin(dictList, fp);
-
     treeNode_ptr p_root = deployKdTree(dictList);
     freeList(dictList);
     searchClosest(p_root, fp);
     fclose(fp);
+    freeTree(p_root);
     printf("\n*********Thank you for using. *********\n");
-
     fflush(stdout);
 
     return 0;

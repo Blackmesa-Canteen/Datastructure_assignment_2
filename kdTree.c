@@ -184,3 +184,41 @@ treeNode_ptr deployKdTree(node_ptr dictHead) {
 
     return p_tree;
 }
+
+void freeTreeList(treeNode_ptr head){
+    treeNode_ptr p;
+    while (head != NULL) {
+        p = head;
+        head = head -> next;
+
+        /*
+         *  4 sentences below deal with mem leak problems
+         *  in cutString() func, according to Valgrind.
+         */
+        free(p -> clueSmallArea);
+        free(p -> industryDescription);
+        free(p -> location);
+        free(p -> name);
+        free(p);
+    }
+}
+
+void freeTree(treeNode_ptr parent){
+    if(! parent){
+        return;
+    }
+    /* Fill in function according to function description. */
+    freeTree(parent->right);
+    freeTree(parent->left);
+
+    if(parent->next != NULL) {
+        freeTreeList(parent->next);
+    }
+    free(parent -> clueSmallArea);
+    free(parent -> industryDescription);
+    free(parent -> location);
+    free(parent -> name);
+    free(parent);
+    parent = NULL;
+}
+

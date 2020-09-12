@@ -2,6 +2,7 @@
 // Created by Shaotien Lee on 2020/9/11.
 //
 #include <stdio.h>
+#include <math.h>
 
 #include "kdTree.h"
 #include "pointFunctions.h"

@@ -211,22 +211,6 @@ void freeList(node_ptr head) {
     }
 }
 
-int outputPointFile(node_ptr dictHead) {
-
-    node_ptr p = dictHead -> next;
-    FILE *fp = fopen("points.txt", "w");
-    if (!fp) {
-        printf("can't create point file, check authorization please.\n");
-        return -1;
-    }
-  printf("\nGenerating the point file...\n");
-    while(p != NULL) {
-        fprintf(fp, "%s\n", p -> location);
-        p = p -> next;
-    }
-    fclose(fp);
-}
-
 /** input dict, x, y, return a pointer points to the node, which
  * location is (x, y) */
 node_ptr searchByCoordinate(node_ptr dictHead, double pointX, double pointY) {

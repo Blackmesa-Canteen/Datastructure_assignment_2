@@ -4,7 +4,6 @@
  *  the source file, to give the dictionary ability to process data.
  */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
