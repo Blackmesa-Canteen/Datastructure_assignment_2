@@ -182,6 +182,8 @@ treeNode_ptr deployKdTree(node_ptr dictHead) {
     }
     printf("K-D Tree deployed\n");
 
+    free(midName);
+    free(midLocation);
     return p_tree;
 }
 

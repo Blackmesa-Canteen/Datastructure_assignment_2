@@ -168,5 +168,6 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
         free(p_target);
 
     }
+    free(whatToFind);
 }
 
