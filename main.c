@@ -55,12 +55,6 @@ int main(int argc, char  **argv) {
         printf("ERROR: parameters!\n");
         return -1;
     }
-//    else if (argc == 5 && !strcmp(argv[3], "from")){
-//        inputFileName = argv[1];
-//        outputFileName = argv[2];
-//        keyFileName = argv[4];
-//        inputMethod = 2; }
-
 
     /* Open the input file with the given filename for reading */
     FILE *fp = fopen(inputFileName, "r");

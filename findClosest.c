@@ -66,49 +66,10 @@ double distanceCalc(treeNode_ptr p_node, treeNode_ptr p_target) {
     return answer;
 }
 
-//treeNode_ptr searchPotentialClose(treeNode_ptr p_tree, treeNode_ptr ancestor,
-//                          FILE *outfile, double targetX, double targetY) {
-//    treeNode_ptr nearest = NULL;
-//    double D = 0;
-//
-//    if (p_tree == NULL) {
-//        nearest = ancestor;
-//
-//    } else if (p_tree->dimension == 'x' && targetX < p_tree->nodeX) {
-//        nearest = searchPotentialClose(p_tree->left, p_tree,
-//                outfile, targetX, targetY);
-//    } else if (p_tree->dimension == 'x' && targetX > p_tree->nodeX) {
-//        nearest = searchPotentialClose(p_tree->right, p_tree,
-//                             outfile, targetX, targetY);
-//    } else if (p_tree->dimension == 'x' && targetX == p_tree->nodeX &&
-//                targetY != p_tree->nodeY) {
-//        nearest = searchPotentialClose(p_tree->right, p_tree,
-//                                       outfile, targetX, targetY);
-//    } else if (p_tree->dimension == 'y' && targetY < p_tree->nodeY) {
-//        nearest = searchPotentialClose(p_tree->left, p_tree,
-//                                       outfile, targetX, targetY);
-//    } else if (p_tree->dimension == 'y' && targetY > p_tree->nodeY) {
-//        nearest = searchPotentialClose(p_tree->right, p_tree,
-//                                       outfile, targetX, targetY);
-//    } else if (p_tree->dimension == 'y' && targetY == p_tree->nodeY &&
-//               targetX != p_tree->nodeX) {
-//        nearest = searchPotentialClose(p_tree->right, p_tree,
-//                                       outfile, targetX, targetY);
-//    } else if (targetY == p_tree->nodeY && targetX == p_tree->nodeX) {
-//        nearest = p_tree;
-//    }
-//
-//    return nearest;
-//}
-
 /* used to count compares */
 void countCompare(int *compareCounter) {
-    int a;
-    a = *compareCounter;
-//    free(compareCounter);
-//    compareCounter = NULL;
-    a += 1;
-    compareCounter = &a;
+
+    *compareCounter = *compareCounter + 1;
 }
 
 /* find nearest point, p_best will point to it */
@@ -117,7 +78,8 @@ void nearest(treeNode_ptr p_root, treeNode_ptr p_target,
 {
     double d, dMQ;
 
-    if (p_root == NULL) return;
+    countCompare(compareCounter);
+    if (p_root == NULL) return; // found potential nearest point
     d = distanceCalc(p_root, p_target);
     if(p_root->dimension == 'x') {
         dMQ = p_root->nodeX - p_target->nodeX;
@@ -134,15 +96,18 @@ void nearest(treeNode_ptr p_root, treeNode_ptr p_target,
     if (*best_D == 0) return;
     if (dMQ > 0) {
         nearest(p_root->left, p_target, p_best, best_D, compareCounter);
-        //countCompare(compareCounter);
     } else {
         nearest(p_root->right, p_target, p_best, best_D, compareCounter);
-        //countCompare(compareCounter);
     }
 
-    if (pow(dMQ, 2) >= pow((*best_D), 2)) return; // if the circle is bigger than distance MQ
-    nearest(dMQ > 0 ? p_root->right : p_root->left, p_target, p_best, best_D, compareCounter);
-    //countCompare(compareCounter);
+    /* do we need to check the other side? */
+    if (pow(dMQ, 2) >= pow((*best_D), 2)) return;
+    /* check the other side */
+    if (dMQ > 0) {
+        nearest(p_root->right, p_target, p_best, best_D, compareCounter);
+    } else {
+        nearest(p_root->left, p_target, p_best, best_D, compareCounter);
+    }
 }
 
 void searchClosest(treeNode_ptr root, FILE *outfile) {
@@ -181,10 +146,10 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
         compareCounter = 0;
         nearest(p_root, p_target, &p_best, &bestD, &compareCounter);
         /* output compare times through stdout */
-        printf("%f %f --> %d\n", targetX, targetY, compareCounter);
+        printf("%g %g --> %d\n", targetX, targetY, compareCounter);
 
         while(p_best != NULL) {
-            fprintf(outfile,"%f %f --> ", targetX, targetY);
+            fprintf(outfile,"%g %g --> ", targetX, targetY);
             fprintf(outfile, "Census year: %d || ", p_best -> censusYear);
             fprintf(outfile, "Block ID: %d || ", p_best -> blockId);
             fprintf(outfile, "Property ID: %d || ", p_best -> propertyId);

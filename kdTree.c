@@ -15,7 +15,9 @@
 
 /** setup root */
 treeNode_ptr initTree(node_ptr p_dict) {
+
     double midX = 0;
+
     treeNode_ptr root = (treeNode_ptr) calloc(1, sizeof(treeNode_t));
     midX = findMedianX(p_dict); // find median x
     node_ptr p_dict_midPoint = NULL;
@@ -170,7 +172,7 @@ treeNode_ptr deployKdTree(node_ptr dictHead) {
     p_dict = p_dict->next;
 
     while(p_dict != NULL) {
-        printf("readed: %s\n", p_dict->key); // test reading
+        //printf("readed: %s\n", p_dict->key); // test reading
         if(p_dict != NULL && !strcmp(p_dict->location, midLocation) &&
            !strcmp(p_dict->key, midName)) {
             p_dict = p_dict->next; // skip duplicating record in root.
@@ -178,6 +180,7 @@ treeNode_ptr deployKdTree(node_ptr dictHead) {
         creatTreeNodes(p_tree, NULL, p_dict, 'x');
         p_dict = p_dict->next;
     }
+    printf("K-D Tree deployed\n");
 
     return p_tree;
 }
