@@ -1,5 +1,5 @@
 //
-// Created by Shaotien Lee on 2020/9/11.
+// Created by Xiaotian on 2020/9/11.
 //
 #include <stdlib.h>
 #include <stdio.h>
@@ -78,7 +78,6 @@ void nearest(treeNode_ptr p_root, treeNode_ptr p_target,
 {
     double d, dMQ;
 
-    countCompare(compareCounter);
     if (p_root == NULL) return; // found potential nearest point
     d = distanceCalc(p_root, p_target);
     if(p_root->dimension == 'x') {
@@ -93,10 +92,15 @@ void nearest(treeNode_ptr p_root, treeNode_ptr p_target,
     }
 
     /* if it is the same position */
-    if (*best_D == 0) return;
+    if (*best_D == 0) {
+        //countCompare(compareCounter);
+        return;
+    }
     if (dMQ > 0) {
+        countCompare(compareCounter);
         nearest(p_root->left, p_target, p_best, best_D, compareCounter);
     } else {
+        countCompare(compareCounter);
         nearest(p_root->right, p_target, p_best, best_D, compareCounter);
     }
 
@@ -104,12 +108,15 @@ void nearest(treeNode_ptr p_root, treeNode_ptr p_target,
     if (pow(dMQ, 2) >= pow((*best_D), 2)) return;
     /* check the other side */
     if (dMQ > 0) {
+        countCompare(compareCounter);
         nearest(p_root->right, p_target, p_best, best_D, compareCounter);
     } else {
+        countCompare(compareCounter);
         nearest(p_root->left, p_target, p_best, best_D, compareCounter);
     }
 }
 
+/* find closed point and output results */
 void searchClosest(treeNode_ptr root, FILE *outfile) {
 
     const char quitCommand[] = "quit!";
@@ -155,6 +162,7 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
             fprintf(outfile, "Property ID: %d || ", p_best -> propertyId);
             fprintf(outfile, "Base property ID: %d || ", p_best -> basePropertyId);
             fprintf(outfile, "CLUE small area: %s || ", p_best -> clueSmallArea);
+            fprintf(outfile, "Trading Name: %s || ", p_best -> name);
             fprintf(outfile, "Industry (ANZSIC4) code: %d || ", p_best -> industryCode);
             fprintf(outfile, "Industry (ANZSIC4) description: %s || ", p_best -> industryDescription);
             fprintf(outfile, "x coordinate: %.5f || ", p_best -> xCoordinate);

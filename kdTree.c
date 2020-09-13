@@ -1,5 +1,5 @@
 //
-// Created by Shaotien Lee on 2020/9/10.
+// Created by Xiaotian on 2020/9/10.
 //
 #include <stdlib.h>
 #include <stdio.h>
@@ -148,16 +148,6 @@ treeNode_ptr creatTreeLink(treeNode_ptr parent, treeNode_ptr ancestor, node_ptr 
     return parent;
 }
 
-void deleteATreeNode(treeNode_ptr p_root) {
-
-    treeNode_ptr p = p_root;
-    if(p->next != NULL) {
-        p = p->next;
-    }
-    free(p);
-    p = NULL;
-}
-
 /** create a K-D tree */
 treeNode_ptr deployKdTree(node_ptr dictHead) {
     node_ptr p_dict = dictHead;
@@ -186,6 +176,7 @@ treeNode_ptr deployKdTree(node_ptr dictHead) {
     return p_tree;
 }
 
+/* deals with mem leak, free the linked list */
 void freeTreeList(treeNode_ptr head){
     treeNode_ptr p;
     while (head != NULL) {
@@ -204,6 +195,7 @@ void freeTreeList(treeNode_ptr head){
     }
 }
 
+/* deals with mem leak, free the k-d tree */
 void freeTree(treeNode_ptr parent){
     if(! parent){
         return;

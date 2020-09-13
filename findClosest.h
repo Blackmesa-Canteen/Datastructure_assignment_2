@@ -1,5 +1,5 @@
 //
-// Created by Shaotien Lee on 2020/9/11.
+// Created by Xiaotian on 2020/9/11.
 //
 #include <stdio.h>
 #include <math.h>
@@ -13,7 +13,6 @@
 double getX(char* buffer);
 double getY(char* buffer);
 double distanceCalc(treeNode_ptr p_node, treeNode_ptr p_target);
-//double distanceCalc(treeNode_ptr p_node, double targetX, double targetY);
 void countCompare(int *compareCounter);
 void nearest(treeNode_ptr p_root, treeNode_ptr p_target,
              treeNode_ptr* p_best, double *best_D, int *compareCounter);
