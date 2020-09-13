@@ -125,8 +125,6 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
 
     while(1) {
         fflush(stdin);
-        printf("\n$ Please input accordinate to "
-               "search (input \"quit!\" to stop input): ");
         if (getline(&whatToFind, &whatToFindNumber, stdin) == EOF) {
             /* detect ending of stdin if users use < operator in bash */
             break;
@@ -148,10 +146,10 @@ void searchClosest(treeNode_ptr root, FILE *outfile) {
         compareCounter = 0;
         nearest(p_root, p_target, &p_best, &bestD, &compareCounter);
         /* output compare times through stdout */
-        printf("%g %g --> %d\n", targetX, targetY, compareCounter);
+        printf("%.9g %.9g --> %d\n", targetX, targetY, compareCounter);
 
         while(p_best != NULL) {
-            fprintf(outfile,"%g %g --> ", targetX, targetY);
+            fprintf(outfile,"%.9g %.9g --> ", targetX, targetY);
             fprintf(outfile, "Census year: %d || ", p_best -> censusYear);
             fprintf(outfile, "Block ID: %d || ", p_best -> blockId);
             fprintf(outfile, "Property ID: %d || ", p_best -> propertyId);

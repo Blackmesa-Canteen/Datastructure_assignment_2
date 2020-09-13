@@ -69,7 +69,6 @@ int main(int argc, char  **argv) {
     searchClosest(p_root, fp);
     fclose(fp);
     freeTree(p_root);
-    printf("\n*********Thank you for using. *********\n");
     fflush(stdout);
 
     return 0;

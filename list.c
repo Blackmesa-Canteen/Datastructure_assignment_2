@@ -33,7 +33,6 @@ node_ptr creatNodes(FILE *fp) {
     p_tail -> next = NULL;
 
     /* Skip the fist line of source file*/
-    printf("Reading files.... \n");
     fgets(buffer, MAXLENGTH, fp);
 
     /* Read each line, and create each node */
@@ -61,8 +60,6 @@ node_ptr creatNodes(FILE *fp) {
         p_tail = pNew;
     }
 
-    printf("Done. Please input the key now. \n");
-    printf("******************************\n");
     p_tail -> next = NULL;
     free(buffer);
     free(start);
@@ -180,7 +177,6 @@ void searchByKeyFile(node_ptr dictList, FILE *fp, char* keyFileName) {
             free(whatToFind);
         }
     }
-    printf("Done. \n");
     free(start);
     free(end);
     free(buffer);
@@ -225,7 +221,6 @@ node_ptr searchByCoordinate(node_ptr dictHead, double pointX, double pointY) {
     }
 
     /* if not found the record */
-    printf("WARNING: No record.\n");
     return NULL;
 }
 
@@ -243,6 +238,5 @@ node_ptr searchByX(node_ptr dictHead, double pointX) {
     }
 
     /* if not found the record */
-    printf("WARNING: No record.\n");
     return NULL;
 }

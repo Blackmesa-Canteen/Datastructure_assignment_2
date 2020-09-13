@@ -180,7 +180,6 @@ treeNode_ptr deployKdTree(node_ptr dictHead) {
         creatTreeNodes(p_tree, NULL, p_dict, 'x');
         p_dict = p_dict->next;
     }
-    printf("K-D Tree deployed\n");
 
     free(midName);
     free(midLocation);
