@@ -176,7 +176,7 @@ treeNode_ptr deployKdTree(node_ptr dictHead) {
     return p_tree;
 }
 
-/* deals with mem leak, free the linked list */
+/* deals with mem leak, free the linked list in k-d node */
 void freeTreeList(treeNode_ptr head){
     treeNode_ptr p;
     while (head != NULL) {

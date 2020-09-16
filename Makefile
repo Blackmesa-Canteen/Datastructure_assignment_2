@@ -1,8 +1,8 @@
 # Created by Xiaotian Li on Sep 13, 2020
-# A make file for Assignment 2
+# A make file for Assignment 2 stage 1
 
 map1: main.o list.o dictFunctions.o kdTree.o pointFunctions.o findClosest.o
-	gcc -o map1 main.o list.o dictFunctions.o kdTree.o pointFunctions.o findClosest.o -m
+	gcc -o map1 main.o list.o dictFunctions.o kdTree.o pointFunctions.o findClosest.o -lm
 
 kdTree.o: kdTree.c list.h pointFunctions.h dictFunctions.h
 	gcc -c -Wall kdTree.c
