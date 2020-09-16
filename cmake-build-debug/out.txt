@@ -1,1 +1,0 @@
-2 9 --> Census year: 2018 || Block ID: 113 || Property ID: 110689 || Base property ID: 108118 || CLUE small area: Melbourne (CBD) || Trading Name: fuck || Industry (ANZSIC4) code: 4121 || Industry (ANZSIC4) description: Fresh Meat, Fish and Poultry Retailing || x coordinate: 144.95767 || y coordinate: -37.80762 || Location: (9, 2) || 

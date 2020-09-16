@@ -13,7 +13,8 @@
 #define MAXLENGTH 512
 
 
-/** setup root */
+/** setup root in median */
+/** abandoned now */
 treeNode_ptr initTree(node_ptr p_dict) {
 
     double midX = 0;
@@ -153,26 +154,26 @@ treeNode_ptr deployKdTree(node_ptr dictHead) {
     node_ptr p_dict = dictHead;
     treeNode_ptr p_tree = NULL;
 
-    char* midLocation = NULL;
-    char* midName = NULL;
+    //char* midLocation = NULL;
+    //char* midName = NULL;
 
-    p_tree = initTree(p_dict);
-    midLocation = copyString(p_tree->location);
-    midName = copyString(p_tree->name);
-    p_dict = p_dict->next;
+    //p_tree = initTree(p_dict);
+    //midLocation = copyString(p_tree->location);
+    //midName = copyString(p_tree->name);
+    p_dict = p_dict->next; //skip head node
 
     while(p_dict != NULL) {
-        //printf("readed: %s\n", p_dict->key); // test reading
-        if(p_dict != NULL && !strcmp(p_dict->location, midLocation) &&
-           !strcmp(p_dict->key, midName)) {
-            p_dict = p_dict->next; // skip duplicating record in root.
-        }
-        creatTreeNodes(p_tree, NULL, p_dict, 'x');
+//        printf("readed: %s\n", p_dict->key); // test reading
+//        if(p_dict != NULL && !strcmp(p_dict->location, midLocation) &&
+//           !strcmp(p_dict->key, midName)) {
+//            p_dict = p_dict->next; // skip duplicating record in root.
+//        }
+        p_tree = creatTreeNodes(p_tree, NULL, p_dict, 'x');
         p_dict = p_dict->next;
     }
 
-    free(midName);
-    free(midLocation);
+    //free(midName);
+    //free(midLocation);
     return p_tree;
 }
 
